@@ -1,6 +1,6 @@
 import { getAIConfig } from './config'
 import { GoogleAIProvider } from './googleAIProvider'
-import type { AIProvider, ModelInfo, ProviderHealth, VisionResult } from './types'
+import type { AIProvider, ModelInfo, ProviderHealth, VisionResult, SolveResult } from './types'
 
 class UnavailableProvider implements AIProvider {
   constructor(private readonly message: string) {}
@@ -19,6 +19,10 @@ class UnavailableProvider implements AIProvider {
   }
 
   processImage(): Promise<VisionResult> {
+    return Promise.reject(new Error(this.message))
+  }
+
+  solveQuestion(): Promise<SolveResult> {
     return Promise.reject(new Error(this.message))
   }
 }
