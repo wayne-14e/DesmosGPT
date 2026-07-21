@@ -1,0 +1,345 @@
+{
+  "metadata": {
+    "id": "linear-regression",
+    "version": "2.0.0",
+    "author": "DesmosGPT",
+    "lastUpdated": "2026-07-21",
+    "tags": [
+      "linear",
+      "regression",
+      "line",
+      "slope",
+      "correlation",
+      "best-fit",
+      "scatterplot",
+      "SAT-Math",
+      "trend-line",
+      "data-analysis",
+      "linear-modeling"
+    ]
+  },
+  "general_information": {
+    "title": "Linear Regression: Modeling with Straight Lines",
+    "description": "Comprehensive guide to finding the equation of a line that models data using linear regression in Desmos. Covers both exact line determination (2 points) and best-fit trend lines (3+ points) for SAT Math data analysis problems. Includes strategies for slope-intercept, point-slope, and standard forms.",
+    "sat_topic": "Algebra: Linear Equations and Data Analysis",
+    "subtopics": [
+      "Linear Functions",
+      "Data Analysis",
+      "Scatter Plots",
+      "Best-Fit Lines",
+      "Slope and Intercept",
+      "Correlation",
+      "Trend Analysis"
+    ],
+    "difficulty": "beginner to intermediate",
+    "estimated_time_seconds": "20",
+    "prerequisites": [
+      "Understanding of linear functions and slope",
+      "Ability to read coordinate points from graphs or tables",
+      "Basic familiarity with Desmos operations"
+    ],
+    "related_techniques": [
+      "function-modeling",
+      "quadratic-regression",
+      "systems",
+      "exponential-regression"
+    ]
+  },
+  "linear_regression_fundamentals": {
+    "slope_intercept_form": "y = mx + b, where m is the slope and b is the y-intercept.",
+    "slope_formula": "m = (y₂ - y₁) / (x₂ - x₁)",
+    "point_slope_form": "y - y₁ = m(x - x₁)",
+    "standard_form": "Ax + By = C",
+    "slope_interpretation": "The rate of change. For every 1-unit increase in x, y changes by m units.",
+    "y_intercept_interpretation": "The initial value. The value of y when x = 0.",
+    "correlation": "R² indicates fit quality. R² = 1 means perfect linear relationship. R² close to 1 indicates strong linear trend.",
+    "exact_vs_best_fit": {
+      "exact_2_points": "When given exactly 2 points, the regression line passes exactly through both points.",
+      "best_fit_3_plus": "With 3+ points, the line is an approximation that minimizes the total error across all points."
+    }
+  },
+  "desmos_regression_methods": {
+    "table_method": {
+      "description": "Enter data points in a table and run regression using the tilde operator.",
+      "steps": [
+        "Create table with x₁ and y₁ columns",
+        "Enter coordinate pairs",
+        "Type: y₁ ~ m x₁ + b",
+        "Read m and b from output"
+      ],
+      "speed": "Fastest method for 2+ points"
+    },
+    "point_slope_method": {
+      "description": "Find two points and use slope formula, then write the equation.",
+      "application": "Best when only 2 points are provided.",
+      "steps": [
+        "Calculate m = (y₂ - y₁)/(x₂ - x₁)",
+        "Use y - y₁ = m(x - x₁)",
+        "Convert to slope-intercept form"
+      ]
+    },
+    "list_method": {
+      "description": "Use Desmos lists for quick data entry without a table.",
+      "syntax": "x = [2, 6, 8], y = [7, 15, 19]",
+      "regression": "y ~ m x + b",
+      "note": "This is faster than table entry for many SAT problems."
+    },
+    "slider_method": {
+      "description": "Use sliders to manually find the best-fit line.",
+      "syntax": "m = 2, b = 3",
+      "note": "Adjust sliders until the line appears to fit the data. Less accurate than regression."
+    },
+    "auto_regression": {
+      "description": "Use Desmos' auto regression feature after entering data.",
+      "steps": [
+        "Enter table with x₁ and y₁",
+        "Click the auto regression button (📈)",
+        "Desmos automatically selects the best-fit model"
+      ],
+      "note": "Quickest for data analysis problems on SAT."
+    }
+  },
+  "required_desmos_actions": [
+    {
+      "action_type": "table_creation",
+      "description": "Create a table with x and y columns to organize coordinate data.",
+      "syntax": "x₁, y₁ (click '+' → table)",
+      "example": "x₁ = [2, 4, 6, 8], y₁ = [7, 11, 15, 19]",
+      "note": "Table headers must match exactly for regression to work."
+    },
+    {
+      "action_type": "linear_regression",
+      "description": "Run linear regression using tilde notation to find slope and intercept.",
+      "syntax": "y₁ ~ m x₁ + b",
+      "example": "y₁ ~ m x₁ + b",
+      "parameters": "m = slope, b = y-intercept",
+      "note": "Always use ~ (tilde), not =. The tilde tells Desmos to find the best-fit parameters."
+    },
+    {
+      "action_type": "exact_line",
+      "description": "For exactly 2 points, find the equation by direct computation.",
+      "syntax": "y₁ ~ m x₁ + b (same as regression for exactly 2 points)",
+      "example": "With (2, 7) and (6, 15): m = 2, b = 3 → y = 2x + 3",
+      "note": "With exactly 2 points, regression gives the exact line."
+    },
+    {
+      "action_type": "list_regression",
+      "description": "Use lists instead of tables for faster data entry.",
+      "syntax": "x = [values], y = [values], y ~ m x + b",
+      "example": "x = [2, 6, 8], y = [7, 15, 19], y ~ m x + b",
+      "note": "Lists are faster to type for 3+ points."
+    },
+    {
+      "action_type": "r_squared",
+      "description": "Desmos automatically displays R² when running regression.",
+      "syntax": "R² = value",
+      "example": "R² = 0.98 (strong correlation)",
+      "interpretation": "R² = 1 means perfect linear fit. R² > 0.9 is strong. R² < 0.5 is weak."
+    }
+  ],
+  "expected_desmos_outputs": [
+    {
+      "type": "parameters",
+      "description": "Regression parameters m (slope) and b (y-intercept) appear in a gray box.",
+      "interpretation": "These define the linear equation y = mx + b. Use these values directly.",
+      "example": "m = 2.5, b = 3.0 → y = 2.5x + 3.0"
+    },
+    {
+      "type": "r_squared",
+      "description": "Coefficient of determination (R²) appears with the regression output.",
+      "interpretation": "Measures how well the line fits the data. R² close to 1 means data points lie very close to the line.",
+      "example": "R² = 0.98 (excellent fit), R² = 0.85 (good fit), R² = 0.45 (poor fit)"
+    },
+    {
+      "type": "graph",
+      "description": "A line passing through or near the data points appears on the graph.",
+      "interpretation": "Visual confirmation that the line captures the data trend. Points should be close to the line.",
+      "example": "The line should follow the general direction of the scatter plot points."
+    },
+    {
+      "type": "point_confirmations",
+      "description": "Hover or click on the line to see coordinates.",
+      "interpretation": "Confirms the line passes through expected points or shows predicted values.",
+      "example": "At x = 5, the line shows y = 15.5"
+    }
+  ],
+  "interpretation_and_answer_logic": {
+    "instructions": "The regression output provides the slope m and y-intercept b. Substitute these into y = mx + b to write the final equation. Check that the line visually aligns with the data trend. For SAT questions, identify whether they ask for the slope (rate of change), y-intercept (initial value), a specific prediction (evaluate at given x), or the equation itself.",
+    "format": "y = [m]x + [b] (slope-intercept form) or equivalent form based on question requirements.",
+    "sat_strategies": {
+      "equation_question": "The SAT asks for the equation. Write y = mx + b with computed m and b.",
+      "prediction_question": "The SAT asks for a value at a specific x. Enter f(x) = y = mx + b, then evaluate at the given x.",
+      "interpretation_question": "The SAT asks for the meaning of slope or intercept. Slope is the rate of change (per unit). Intercept is the initial value (at x = 0).",
+      "trend_question": "The SAT asks about trend. Positive slope → increasing. Negative slope → decreasing."
+    }
+  },
+  "coaching_steps": [
+    {
+      "id": "step-1-enter-data",
+      "title": "Enter the data points into Desmos",
+      "instruction": "Click the '+' button, select 'Table', and enter x-coordinates in the x₁ column and y-coordinates in the y₁ column.",
+      "hint": "Make sure to match x₁ with y₁ values correctly. Each row is one point.",
+      "why": "Tables organize data so Desmos can perform regression analysis. The matching columns ensure correct pairing."
+    },
+    {
+      "id": "step-2-run-regression",
+      "title": "Run linear regression using the tilde operator",
+      "instruction": "In a new expression line, type y₁ ~ m x₁ + b. Press Enter.",
+      "hint": "Always use ~ (tilde) not =. The tilde means 'find the best-fit parameters.'",
+      "why": "The regression finds the line that minimizes the sum of squared errors across all data points."
+    },
+    {
+      "id": "step-3-read-parameters",
+      "title": "Read the slope (m) and y-intercept (b) from the output",
+      "instruction": "Desmos displays m and b values in a gray box below your regression line.",
+      "hint": "m is always the coefficient of x. b is the constant term.",
+      "why": "These parameters define the unique line that best models your data."
+    },
+    {
+      "id": "step-4-write-equation",
+      "title": "Write the equation in slope-intercept form",
+      "instruction": "Substitute m and b into y = mx + b.",
+      "hint": "Check the graph to ensure the line follows the data trend. Points should be close to or on the line.",
+      "why": "The equation allows you to make predictions and interpret the relationship."
+    },
+    {
+      "id": "step-5-evaluate-if-needed",
+      "title": "If asked for a prediction, evaluate at the given x-value",
+      "instruction": "Type f(x) = m x + b, then f(target_x) to get the predicted y-value.",
+      "hint": "For SAT, evaluate at the requested x-value to find the predicted value.",
+      "why": "The function model allows prediction of y-values for any x-value."
+    }
+  ],
+  "common_mistakes": [
+    "Using = instead of ~ for regression. = defines a specific line; ~ finds the best fit.",
+    "Forgetting to match table headers correctly (using x₁ and y₁ but x and y in regression).",
+    "Using x instead of x₁ in the regression formula when using table columns.",
+    "Confusing slope (m) with y-intercept (b). m is the coefficient of x; b is the constant.",
+    "Not entering all data points into the table.",
+    "Using quadratic regression when linear regression is appropriate.",
+    "Overcomplicating with 2 points: with exactly 2 points, slope formula is faster.",
+    "Misinterpreting R²: R² close to 1 means good fit. R² close to 0 means poor fit.",
+    "Forgetting units in word problems: slope has units (y-units per x-unit).",
+    "Using regression when exact answer is required and points lie perfectly on a line (R² = 1)."
+  ],
+  "confidence_hints": [
+    "With exactly 2 points, the regression line passes exactly through both (R² = 1).",
+    "With 3+ points, the line is a best-fit approximation. Points will be close but not necessarily on the line.",
+    "R² indicates how well the line fits: 1.0 = perfect fit, > 0.9 = strong, > 0.7 = moderate, < 0.5 = weak.",
+    "A positive slope means the line goes up as x increases. A negative slope means it goes down.",
+    "The y-intercept is the value when x = 0. In many word problems, this is the 'initial value.'",
+    "Slope is the rate of change: 'for each 1-unit increase in x, y increases by m units.'",
+    "Check the graph visually: if the line doesn't follow the points, you may have the wrong model type."
+  ],
+  "sat_tips": {
+    "two_points": "If given exactly 2 points, use slope formula m = (y₂ - y₁)/(x₂ - x₁). This is faster than regression.",
+    "table_data": "If given 3+ points in a table, use regression in Desmos. It finds the best-fit instantly.",
+    "scatterplot": "If given a scatterplot, use regression to find the trend line equation.",
+    "interpretation": "SAT often asks: 'What is the meaning of the slope?' Answer: 'The rate of change; for each unit increase in x, y increases by m units.'",
+    "prediction": "SAT often asks: 'What is the predicted value when x = ?' Use f(x) = mx + b and evaluate.",
+    "negative_slope": "Remember negative slopes represent decreasing relationships. Don't forget the negative sign."
+  },
+  "examples_provided": [
+    {
+      "question": "A line passes through (2, 7) and (6, 15). What is the equation of the line?",
+      "desmos_setup": [
+        "Table: x₁ = [2, 6], y₁ = [7, 15]",
+        "Regression: y₁ ~ m x₁ + b",
+        "Result: m = 2, b = 3"
+      ],
+      "resolved_parameters": {
+        "slope": 2,
+        "y_intercept": 3,
+        "r_squared": 1
+      },
+      "final_solution": "y = 2x + 3",
+      "explanation": "With exactly 2 points, regression gives the exact line. m = 2 (rise/run = 8/4 = 2), b = 3 (y-intercept). R² = 1 indicates perfect fit."
+    },
+    {
+      "question": "Find the equation of the line that best fits: (1, 3), (2, 5), (3, 7), (4, 9).",
+      "desmos_setup": [
+        "Table: x₁ = [1, 2, 3, 4], y₁ = [3, 5, 7, 9]",
+        "Regression: y₁ ~ m x₁ + b",
+        "Result: m = 2, b = 1, R² = 1"
+      ],
+      "resolved_parameters": {
+        "slope": 2,
+        "y_intercept": 1,
+        "r_squared": 1
+      },
+      "final_solution": "y = 2x + 1",
+      "explanation": "The data is perfectly linear (y increases by 2 each time). R² = 1 confirms all points lie exactly on the line y = 2x + 1."
+    },
+    {
+      "question": "The table shows values: (0, 10), (2, 18), (4, 26), (6, 34). Find the slope and y-intercept of the linear model.",
+      "desmos_setup": [
+        "Table: x₁ = [0, 2, 4, 6], y₁ = [10, 18, 26, 34]",
+        "Regression: y₁ ~ m x₁ + b",
+        "Result: m = 4, b = 10"
+      ],
+      "resolved_parameters": {
+        "slope": 4,
+        "y_intercept": 10,
+        "r_squared": 1
+      },
+      "final_solution": "m = 4, b = 10 → y = 4x + 10",
+      "explanation": "The data is perfectly linear. The y-intercept is 10 (value at x = 0). Slope is 4 (each unit increase in x gives 4 units increase in y)."
+    },
+    {
+      "question": "A scatter plot shows points: (10, 22), (20, 34), (30, 48), (40, 62). Find the best-fit line and predict y when x = 50.",
+      "desmos_setup": [
+        "Table: x₁ = [10, 20, 30, 40], y₁ = [22, 34, 48, 62]",
+        "Regression: y₁ ~ m x₁ + b",
+        "Result: m ≈ 1.34, b ≈ 8.5, R² ≈ 0.997",
+        "Evaluate: y = 1.34(50) + 8.5 ≈ 75.5"
+      ],
+      "resolved_parameters": {
+        "slope": 1.34,
+        "y_intercept": 8.5,
+        "r_squared": 0.997
+      },
+      "final_solution": "y ≈ 1.34x + 8.5; prediction: y ≈ 75.5",
+      "explanation": "The data is nearly linear. R² ≈ 0.997 indicates an excellent fit. For the prediction, evaluate the model at x = 50."
+    },
+    {
+      "question": "A line has a slope of -3 and passes through (4, 12). What is its y-intercept?",
+      "desmos_setup": [
+        "Use point-slope form: y - 12 = -3(x - 4)",
+        "Simplify: y = -3x + 24",
+        "b = 24"
+      ],
+      "resolved_parameters": {
+        "slope": -3,
+        "y_intercept": 24
+      },
+      "final_solution": "b = 24 → y = -3x + 24",
+      "explanation": "The y-intercept is found by solving y = mx + b with m = -3, and the point (4, 12): 12 = -3(4) + b → 12 = -12 + b → b = 24."
+    },
+    {
+      "question": "Which of the following is the equation of the line that passes through (-2, 1) and (3, 11)? (A) y = 2x + 5 (B) y = 2x - 5 (C) y = -2x + 5 (D) y = 2x + 3",
+      "desmos_setup": [
+        "m = (11 - 1)/(3 - (-2)) = 10/5 = 2",
+        "Use point-slope: y - 1 = 2(x + 2) → y = 2x + 5",
+        "Check: plug (3, 11): 11 = 2(3) + 5 = 11 ✓"
+      ],
+      "resolved_parameters": {
+        "slope": 2,
+        "y_intercept": 5
+      },
+      "final_solution": "Option A: y = 2x + 5",
+      "explanation": "Calculate slope from two points: m = 2. Use point-slope to find b = 5. Option A matches. This is a classic SAT multiple-choice approach."
+    },
+    {
+      "question": "The scatter plot shows a strong positive correlation. The regression line is y = 2.5x + 100. What does the slope represent?",
+      "desmos_setup": [
+        "Identify context: If x is years and y is population, slope = 2.5 people per year."
+      ],
+      "resolved_parameters": {
+        "slope": 2.5,
+        "interpretation": "For each 1-unit increase in x, y increases by 2.5 units."
+      },
+      "final_solution": "Slope represents the rate of change: for each additional year, the population increases by 2.5 people.",
+      "explanation": "In context, slope is always 'the rate of change' or 'change in y per unit change in x.' This is a common SAT interpretation question."
+    }
+  ]
+}

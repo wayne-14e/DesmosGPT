@@ -1,0 +1,349 @@
+{
+  "metadata": {
+    "id": "quadratic-regression-knowledge-base",
+    "version": "3.0.0",
+    "author": "DesmosGPT",
+    "last_updated": "2026-07-21",
+    "tags": [
+      "quadratic",
+      "regression",
+      "parabola",
+      "curve-fitting",
+      "vertex-form",
+      "factored-form",
+      "standard-form",
+      "tilde-trick",
+      "equivalent-expressions",
+      "SAT-Math",
+      "Advanced-Math",
+      "data-modeling",
+      "nonlinear-functions",
+      "best-fit",
+      "correlation"
+    ]
+  },
+  "general_information": {
+    "title": "Comprehensive Quadratic Regression and Coefficient Solving",
+    "description": "Systematic protocol to resolve standard, vertex, and factored quadratic equations from coordinate points, tables, and graphs. Includes strategies for solving polynomial identities using the Tilde Trick in Desmos. Covers both regression modeling and exact equation solving for the SAT Math section.",
+    "sat_topic": "Advanced Math: Nonlinear Functions",
+    "subtopics": [
+      "Quadratic Functions",
+      "Data Modeling and Regression",
+      "Parabolas and Their Properties",
+      "Equivalent Expressions",
+      "Vertex and Roots"
+    ],
+    "difficulty": "Hard",
+    "estimated_time_seconds": 30,
+    "prerequisites": [
+      "Knowledge of quadratic structural forms (standard, vertex, factored)",
+      "Ability to identify coordinates from graphical displays, word problems, or datasets",
+      "Understanding of function notation and evaluation"
+    ],
+    "related_techniques": [
+      "linear-regression",
+      "exponential-regression",
+      "system-of-equations-graphing",
+      "circle-equations",
+      "polynomial-identities"
+    ]
+  },
+  "usage_criteria": {
+    "trigger_keywords": [
+      "parabola",
+      "quadratic",
+      "curve",
+      "best fit",
+      "regression",
+      "points",
+      "coordinates",
+      "vertex",
+      "equivalent to",
+      "constant",
+      "for all values of x",
+      "x-intercepts",
+      "roots",
+      "minimum",
+      "maximum",
+      "turning point",
+      "axis of symmetry",
+      "opens upward",
+      "opens downward"
+    ],
+    "when_to_use": "Use when presented with coordinate points, tables, or scatterplots and asked to determine a corresponding quadratic equation. Also use when required to find unknown constants that satisfy a polynomial equivalence or identity, or when a problem states or implies a quadratic model and provides at least three data points."
+  },
+  "quadratic_fundamentals": {
+    "standard_form": "y = ax² + bx + c, where a ≠ 0. c is the y-intercept.",
+    "vertex_form": "y = a(x - h)² + k, where (h, k) is the vertex. h = -b/(2a).",
+    "factored_form": "y = a(x - r₁)(x - r₂), where r₁ and r₂ are the x-intercepts (roots).",
+    "axis_of_symmetry": "x = h, where h = -b/(2a). The parabola is symmetric about this vertical line.",
+    "vertex_properties": "If a > 0, parabola opens upward (U-shape), vertex is minimum. If a < 0, parabola opens downward (∩-shape), vertex is maximum. [citation:9]",
+    "discriminant": "Δ = b² - 4ac. If Δ > 0, 2 real roots; if Δ = 0, 1 real root; if Δ < 0, 0 real roots."
+  },
+  "desmos_setup_protocols": {
+    "data_entry": {
+      "table_creation": "Click the '+' icon (top-left) and select 'table'. Enter x-values in x₁ column and y-values in y₁ column. The table provides the data structure for all regression operations. [citation:1][citation:7]",
+      "point_extraction": "Extract at least three (x, y) coordinate pairs from the problem. For word problems, map variables to coordinates (e.g., time t → x, distance d → y). Use symmetry to generate a third point when a vertex and one other point are known: if vertex is (h, k) and point is (p, q), the symmetric point is (2h - p, q). [citation:5][citation:9]"
+    },
+    "regression_syntax": {
+      "standard_form": "y₁ ~ a x₁² + b x₁ + c",
+      "vertex_form": "y₁ ~ a (x₁ - h)² + k",
+      "factored_form": "y₁ ~ a (x₁ - r₁)(x₁ - r₂)",
+      "with_constraints": "For vertex form when h and k are known: y₁ ~ a (x₁ - h)² + k (Desmos will only solve for a). [citation:11]",
+      "tilde_operator": "Use ~ (tilde), not =. The tilde tells Desmos to find the best-fit parameters for the model. [citation:6][citation:7]"
+    },
+    "auto_regression_feature": "After entering data in a table, click the 'auto regression' button to the left of the table header. Desmos automatically selects the appropriate regression model (linear, quadratic, etc.) based on the data pattern. [citation:1]"
+  },
+  "required_desmos_actions": [
+    {
+      "action_type": "table_creation",
+      "description": "Establish a coordinate grid using the standard table format to house independent and dependent data points. This is the foundation for all regression analysis in Desmos. [citation:1][citation:7]",
+      "syntax": "x₁, y₁ (click '+' → table)",
+      "example": "x₁ = [-1, 0, 1, 2], y₁ = [3, 1, 3, 9]"
+    },
+    {
+      "action_type": "standard_regression",
+      "description": "Execute quadratic regression in standard form to resolve coefficients a, b, and c. This is the most versatile form for SAT problems, directly providing the y-intercept (c). [citation:2][citation:7]",
+      "syntax": "y₁ ~ a*x₁^2 + b*x₁ + c",
+      "example": "y₁ ~ a*x₁^2 + b*x₁ + c",
+      "parameters": "a (vertical stretch/direction), b (linear coefficient), c (y-intercept)"
+    },
+    {
+      "action_type": "vertex_regression",
+      "description": "Execute custom quadratic regression in vertex form to resolve stretch factor a and vertex coordinates (h, k). Use when vertex information is explicitly given or can be inferred. [citation:11]",
+      "syntax": "y₁ ~ a*(x₁ - h)^2 + k",
+      "example": "y₁ ~ a*(x₁ - h)^2 + k",
+      "parameters": "a (vertical stretch/direction), h (x-coordinate of vertex), k (y-coordinate of vertex)"
+    },
+    {
+      "action_type": "factored_regression",
+      "description": "Execute custom quadratic regression in factored form to resolve stretch factor a and roots r₁ and r₂. Use when roots or x-intercepts are known or easily identified. [citation:2]",
+      "syntax": "y₁ ~ a*(x₁ - r₁)*(x₁ - r₂)",
+      "example": "y₁ ~ a*(x₁ - r₁)*(x₁ - r₂)",
+      "parameters": "a (vertical stretch/direction), r₁ (first root), r₂ (second root)"
+    },
+    {
+      "action_type": "constrained_regression",
+      "description": "Regression with known parameter values locked. Useful when the vertex or specific coefficients are provided. Desmos solves only for the unknown parameters. [citation:11]",
+      "syntax": "y₁ ~ a*(x₁ - h)² + k where h and k are constants",
+      "example": "y₁ ~ a*(x₁ - 3.5)² + 13.91 (solves only for a)"
+    },
+    {
+      "action_type": "tilde_trick_identity",
+      "description": "Model an algebraic identity using a regression equation with dummy table inputs to solve for unknown coefficients directly. This is a powerful SAT strategy for 'equivalent expression' problems. [citation:7]",
+      "syntax": "[Expression with constants]_1 ~ [Target expression]_1, with x₁ values defining the domain",
+      "example": "A*(x₁ - 2)^2 + B ~ 3*x₁^2 - 12*x₁ + 15. Use x₁ = [0, 1, 2] to solve for A and B."
+    },
+    {
+      "action_type": "function_evaluation",
+      "description": "After regression, use the determined function to compute values at specific x-coordinates. This is the final step in many SAT word problems. [citation:7]",
+      "syntax": "f(x) = a*x² + b*x + c, then f(target_x)",
+      "example": "f(30) after finding f(t) = 0.5*t² + 0*t + 0 → f(30) = 450"
+    }
+  ],
+  "expected_desmos_outputs": {
+    "parameters": {
+      "a": "Vertical stretch factor and direction of opening. a > 0 opens upward, a < 0 opens downward.",
+      "b": "Linear coefficient in standard form.",
+      "c": "y-intercept in standard form.",
+      "h": "x-coordinate of the vertex.",
+      "k": "y-coordinate of the vertex.",
+      "r₁, r₂": "x-intercepts / roots of the parabola."
+    },
+    "statistical_metrics": {
+      "r²": "Coefficient of determination. r² = 1 indicates perfect fit (all points lie exactly on the parabola). [citation:4]",
+      "RMSE": "Root Mean Square Error (measure of fit quality)."
+    },
+    "graphical_output": "A parabola intersecting the coordinate points plotted in the data table. The regression curve can be clicked to reveal key attributes (vertex, intercepts)."
+  },
+  "interpretation_and_answer_logic": {
+    "instructions": "Locate the resolved parameters under the regression output window. Substitute the computed numeric values back into the specified quadratic model format. For standard form, y = ax² + bx + c, use the displayed a, b, and c values. For vertex form, y = a(x - h)² + k, use a, h, and k. For factored form, y = a(x - r₁)(x - r₂), use a, r₁, and r₂. If evaluating equivalent expressions, sum or manipulate the isolated constants as dictated by the prompt. Cross-verify the solution by clicking on the resulting curve to check key attributes such as intercepts and vertex coordinates against the original question text. In word problems, evaluate the function at the target x-value to get the final answer. [citation:7][citation:11]",
+    "format": "y = a*x² + b*x + c, y = a*(x-h)² + k, or y = a*(x-r₁)*(x-r₂) based on regression output.",
+    "sat_strategies": {
+      "point_extraction": "Extract 3 points from word problems. For projectile/time problems, map time to x-axis and distance/height to y-axis. If vertex is given, use symmetry to find third point. [citation:5][citation:7]",
+      "auto_regression": "Use the auto regression button for speed - just ensure you have 3 points in the table first. [citation:1]",
+      "evaluation": "After finding the function, compute the required value by direct substitution or by typing f(target_x) in a new line."
+    }
+  },
+  "coaching_steps": [
+    {
+      "id": "step-1-extract-points",
+      "title": "Extract at least 3 coordinate points from the problem",
+      "description": "Identify three (x, y) coordinate pairs from the problem statement, table, or graph.",
+      "hint": "Look for (time, distance), (x, y), or coordinate pairs in data tables.",
+      "why": "A quadratic function requires three points to determine its unique equation. The SAT often provides data tables, word problems, or graphs with enough information."
+    },
+    {
+      "id": "step-2-create-table",
+      "description": "Open Desmos, click '+', select 'table', and enter the points in x₁ and y₁ columns.",
+      "hint": "Match table headers exactly - x₁ and y₁ are the default.",
+      "why": "The table structure organizes data for the regression engine. Desmos automatically pairs x₁ and y₁ values. [citation:1][citation:7]"
+    },
+    {
+      "id": "step-3-choose-form",
+      "description": "Select the appropriate quadratic form based on problem requirements: standard form (y₁ ~ a*x₁² + b*x₁ + c), vertex form (y₁ ~ a*(x₁ - h)² + k), or factored form (y₁ ~ a*(x₁ - r₁)*(x₁ - r₂)).",
+      "hint": "Use standard form when a, b, c are needed. Use vertex form when vertex is given. Use factored form when roots are given.",
+      "why": "Different forms provide different parameters directly. SAT questions often ask for specific coefficients or values. [citation:2][citation:11]"
+    },
+    {
+      "id": "step-4-run-regression",
+      "description": "Type the regression expression (using ~) and press Enter. Desmos displays parameter values instantly.",
+      "hint": "Never use = for regression - always use ~ (tilde). The tilde means 'fit this model to the data'. [citation:6]",
+      "why": "The tilde operator tells Desmos to find the best-fit parameters, which is the mathematical definition of regression. [citation:7]"
+    },
+    {
+      "id": "step-5-read-parameters",
+      "description": "Read the displayed parameter values (a, b, c or a, h, k). These define the quadratic function.",
+      "hint": "The parameters appear in a gray box directly below your regression line.",
+      "why": "Desmos computes these values using least-squares optimization. For SAT problems with exactly 3 points, the fit is exact (r² = 1). [citation:4]"
+    },
+    {
+      "id": "step-6-solve",
+      "description": "Use the determined equation to answer the original question. Evaluate at the target x-value or compute the requested quantity.",
+      "hint": "Type f(target_x) in a new line to quickly evaluate, or type the expression directly.",
+      "why": "The final step connects the mathematical model back to the specific SAT problem. [citation:7]"
+    }
+  ],
+  "common_mistakes": [
+    {
+      "mistake": "Using = instead of ~ for regression",
+      "solution": "Always use ~ (tilde) when fitting a model to data. y₁ = ax₁² + bx₁ + c defines a specific line; y₁ ~ ax₁² + bx₁ + c performs regression. [citation:6][citation:7]"
+    },
+    {
+      "mistake": "Incorrect subscript matching",
+      "solution": "The table headers must match exactly: x₁ and y₁. If you rename columns, update the regression formula accordingly. The default is x₁ and y₁. [citation:7]"
+    },
+    {
+      "mistake": "Entering regression formula before the table",
+      "solution": "Desmos requires the table data to be loaded before the regression formula can use it. Always create the table first. [citation:7]"
+    },
+    {
+      "mistake": "Only entering 2 points",
+      "solution": "A quadratic function requires 3 points to determine unique a, b, c values. With 2 points, there are infinitely many parabolas. [citation:1]"
+    },
+    {
+      "mistake": "Stopping at parameter output",
+      "solution": "After regression, you get a, b, c values - but you still need to use them to answer the specific SAT question (compute value, sum, etc.). [citation:7]"
+    },
+    {
+      "mistake": "Ignoring exact form requirements",
+      "solution": "Desmos gives decimal approximations. The SAT may require exact forms (like fractions). Convert decimals to fractions when needed. [citation:2]"
+    },
+    {
+      "mistake": "Misidentifying vertex direction",
+      "solution": "a > 0 opens upward (minimum). a < 0 opens downward (maximum). Check the problem context to ensure your interpretation matches. [citation:9]"
+    }
+  ],
+  "confidence_hints": [
+    {
+      "hint": "When r² = 1 in the output, all data points lie exactly on the parabola. This is common for SAT problems with exactly 3 points. [citation:4]",
+      "why": "The data in SAT problems is typically constructed to fit the model perfectly, making r² = 1 a confidence indicator."
+    },
+    {
+      "hint": "Click on the graphed parabola to verify its vertex, intercepts, and other key features directly. [citation:1]",
+      "why": "Visual verification prevents interpretation errors and confirms the regression matches the original question data."
+    },
+    {
+      "hint": "Test that all given points satisfy the resulting equation by entering them in the table and checking if they lie on the curve. [citation:2]",
+      "why": "Each point must lie on the parabola. If a point is off the curve, the data or regression may be incorrect."
+    },
+    {
+      "hint": "Check that your a, b, c values produce the correct y-intercept (c) and vertex (-b/2a). [citation:9]",
+      "why": "The y-intercept and vertex are critical SAT question points. Verifying them ensures the full function is correct."
+    }
+  ],
+  "sat_tips": {
+    "auto_regression": "Desmos recently added an auto regression feature. After entering a table, click the button to the left of the table header. Desmos automatically identifies the correct model type, saving time on test day. [citation:1]",
+    "symmetry": "Use symmetry to generate a third point when you have vertex and one other point. If vertex is (h, k) and point is (p, q), the symmetric point is (2h - p, q). This is a powerful SAT strategy. [citation:5][citation:9]",
+    "evaluation": "After regression, type f(x) = ... and then f(target_x) to compute the answer. This avoids manual arithmetic errors. [citation:7]",
+    "form_selection": "When SAT answer choices are in a specific form (vertex, factored, or standard), match that form exactly in your regression setup. This makes matching answers faster. [citation:10]"
+  },
+  "examples_provided": [
+    {
+      "question": "The total distance d, in meters, traveled by an object moving in a straight line can be modeled by a quadratic function in terms of t. At t = 10 seconds, d = 50 meters; at t = 20 seconds, d = 200 meters. If the object was at d = 0 when t = 0, what is the total distance after 30 seconds?",
+      "desmos_setup": [
+        "Points: (0, 0), (10, 50), (20, 200)",
+        "Table: x₁ = [0, 10, 20], y₁ = [0, 50, 200]",
+        "Regression: y₁ ~ a*x₁² + b*x₁ + c"
+      ],
+      "resolved_parameters": {
+        "a": 0.5,
+        "b": 0,
+        "c": 0
+      },
+      "final_solution": "450 meters",
+      "explanation": "Desmos resolves the parameters to a = 0.5, b = 0, c = 0, giving d = 0.5t². Evaluating at t = 30 gives 0.5 * 900 = 450 meters. This demonstrates the standard SAT word problem approach. [citation:7]"
+    },
+    {
+      "question": "The quadratic function f is defined by f(x) = a*x² + b*x + c, where a, b, and c are constants. The graph passes through (-1, 10), (0, 14), and (1, 20). What is a + b + c?",
+      "desmos_setup": [
+        "Table: x₁ = [-1, 0, 1], y₁ = [10, 14, 20]",
+        "Regression: y₁ ~ a*x₁² + b*x₁ + c"
+      ],
+      "resolved_parameters": {
+        "a": 1,
+        "b": 5,
+        "c": 14
+      },
+      "final_solution": "20",
+      "explanation": "Desmos resolves the parameters to a = 1, b = 5, c = 14. Adding: 1 + 5 + 14 = 20."
+    },
+    {
+      "question": "The quadratic function g is defined by g(x) = a(x - h)² + k, with vertex (-2, 5) and passing through (-3, 8). What is a?",
+      "desmos_setup": [
+        "Points: (-3, 8), vertex given: h = -2, k = 5",
+        "Use symmetry: if vertex is (-2, 5) and point is (-3, 8), symmetric point is (-1, 8)",
+        "Table: x₁ = [-3, -2, -1], y₁ = [8, 5, 8]",
+        "Regression: y₁ ~ a*(x₁ - h)² + k with h = -2, k = 5 locked"
+      ],
+      "resolved_parameters": {
+        "a": 3,
+        "h": -2,
+        "k": 5
+      },
+      "final_solution": "3",
+      "explanation": "Entering the coordinates and locking vertex constraints in Desmos yields a = 3. This demonstrates using symmetry to create the third point and constrained regression. [citation:5]"
+    },
+    {
+      "question": "If (2x + a)² + b is equivalent to 4x² + 12x + 15 for all x, what is a + b?",
+      "desmos_setup": [
+        "Create dummy table: x₁ = [0, 1, 2]",
+        "Regression: (2*x₁ + a)² + b ~ 4*x₁² + 12*x₁ + 15"
+      ],
+      "resolved_parameters": {
+        "a": 3,
+        "b": 6
+      },
+      "final_solution": "9",
+      "explanation": "The Tilde Trick with dummy coordinates yields a = 3 and b = 6. Sum = 9. This is a classic SAT identity problem. [citation:7]"
+    },
+    {
+      "question": "The data in the scatterplot shows a maximum at x = 56.25. If modeled by a quadratic regression with correlation coefficient 1.0, what is y when x = 90?",
+      "desmos_setup": [
+        "Use symmetry: axis of symmetry is x = 56.25",
+        "x = 90 is 33.75 units to the right. Symmetric point is at x = 56.25 - 33.75 = 22.5.",
+        "Read y-value at x = 22.5 from the scatterplot: 50.5"
+      ],
+      "resolved_parameters": {
+        "symmetric_x": 22.5,
+        "y": 50.5
+      },
+      "final_solution": "50.5",
+      "explanation": "When r² = 1, the model perfectly fits the data. Using the symmetry property of parabolas, points equidistant from the axis of symmetry have equal y-values. The y-value at x = 90 equals the y-value at x = 22.5, which is 50.5. This tests conceptual understanding of quadratic properties. [citation:4]"
+    },
+    {
+      "question": "A city records daylight hours. At 3.5 months after March 1, there are 13.91 hours. At 6 months, there are 12.66 hours. Using a quadratic model with vertex at month 3.5, estimate daylight hours at month 0.",
+      "desmos_setup": [
+        "Points: (3.5, 13.91), (6, 12.66)",
+        "Vertex at (3.5, 13.91), lock h = 3.5, k = 13.91",
+        "Table: x₁ = [3.5, 6], y₁ = [13.91, 12.66]",
+        "Regression: y₁ ~ a*(x₁ - 3.5)² + 13.91"
+      ],
+      "resolved_parameters": {
+        "a": -0.2
+      },
+      "final_solution": "11.46 hours",
+      "explanation": "Solving y₁ ~ a*(x₁ - 3.5)² + 13.91 yields a = -0.2. Evaluating at x = 0: -0.2*(0 - 3.5)² + 13.91 = -0.2*12.25 + 13.91 = -2.45 + 13.91 = 11.46. Negative a means the parabola opens downward - daylight hours peak near month 3.5. [citation:11]"
+    }
+  ]
+}

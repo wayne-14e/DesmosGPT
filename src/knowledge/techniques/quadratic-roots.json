@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "id": "quadratic-roots",
+    "version": "2.0.0",
+    "author": "DesmosGPT",
+    "lastUpdated": "2026-07-21",
+    "tags": [
+      "quadratic",
+      "roots",
+      "zeros",
+      "solutions",
+      "x-intercepts",
+      "factoring",
+      "quadratic-formula",
+      "SAT-Math",
+      "algebra",
+      "discriminant"
+    ]
+  },
+  "general_information": {
+    "title": "Finding Quadratic Roots and Solutions",
+    "description": "Comprehensive guide to solving quadratic equations using Desmos. Covers graphical methods, exact solutions, and the discriminant. Includes strategies for finding roots, zeros, and x-intercepts of quadratic functions, with special attention to SAT problem types.",
+    "sat_topic": "Algebra: Quadratic Equations",
+    "subtopics": [
+      "Solving Quadratics",
+      "Quadratic Formula",
+      "Graphing Parabolas",
+      "Discriminant Analysis",
+      "Number of Solutions",
+      "Factoring and Zeros"
+    ],
+    "difficulty": "beginner to intermediate",
+    "estimated_time_seconds": "20",
+    "prerequisites": [
+      "Understanding of quadratic equations",
+      "Knowledge of x-intercepts and function notation",
+      "Basic familiarity with Desmos graphing"
+    ],
+    "related_techniques": [
+      "quadratic-regression",
+      "function-modeling",
+      "linear-regression"
+    ]
+  },
+  "quadratic_solving_fundamentals": {
+    "standard_form": "ax² + bx + c = 0, where a ≠ 0. Solutions are where y = 0.",
+    "quadratic_formula": "x = (-b ± √(b² - 4ac)) / (2a)",
+    "discriminant": "Δ = b² - 4ac. Determines the nature and number of solutions.",
+    "solution_types": {
+      "two_real_solutions": "Δ > 0. Parabola crosses x-axis at two distinct points. The SAT often asks for the positive solution only.",
+      "one_real_solution": "Δ = 0. Parabola touches x-axis at exactly one point (the vertex).",
+      "no_real_solutions": "Δ < 0. Parabola never crosses x-axis. Solutions are complex (not on the SAT)."
+    },
+    "factored_form": "a(x - r₁)(x - r₂) = 0. Roots r₁ and r₂ are immediately visible.",
+    "vertex_form": "a(x - h)² + k = 0. Vertex at (h, k), with roots symmetric about x = h.",
+    "sum_of_roots": "-b/a",
+    "product_of_roots": "c/a"
+  },
+  "desmos_solving_methods": {
+    "graphical_method": {
+      "description": "Enter the equation with an equals sign. Desmos will graph both sides and show intersection points.",
+      "syntax_equality": "ax² + bx + c = 0 (graphs left side and right side separately, showing intersections)",
+      "syntax_function": "f(x) = ax² + bx + c, then visually identify x-intercepts",
+      "click_intersections": "Click on intersection points to reveal exact coordinates, which are the roots."
+    },
+    "function_method": {
+      "description": "Define the quadratic as a function and use Desmos' built-in root-finding features.",
+      "syntax": "f(x) = ax² + bx + c",
+      "find_roots": "Enter f(x) = 0 to see where the function equals zero",
+      "numerical_root": "The x-intercepts are automatically displayed when you click on the curve crossing the x-axis."
+    },
+    "table_method": {
+      "description": "Create a table of values to identify where the function changes sign.",
+      "syntax": "Create table with x values and corresponding y values. Look for sign changes.",
+      "application": "When roots are between integers, the table shows where y changes from positive to negative."
+    },
+    "regression_method": {
+      "description": "When given points and asked for roots, use regression to find the equation first, then identify roots.",
+      "syntax": "y₁ ~ ax₁² + bx₁ + c, then use standard form to find roots.",
+      "application": "Perfect for data-driven problems where the equation isn't given."
+    }
+  },
+  "required_desmos_actions": [
+    {
+      "action_type": "equation_plotting",
+      "description": "Enter the quadratic equation set equal to zero to graph both sides and find intersections.",
+      "syntax": "ax² + bx + c = 0",
+      "example": "x² - 5x - 14 = 0",
+      "note": "Desmos will graph y = ax² + bx + c and y = 0. The x-coordinates of intersection points are the roots."
+    },
+    {
+      "action_type": "function_definition",
+      "description": "Define the quadratic as a function for easier evaluation and root identification.",
+      "syntax": "f(x) = ax² + bx + c",
+      "example": "f(x) = x² - 5x - 14",
+      "note": "Then enter f(x) = 0 or click on the curve where it crosses the x-axis."
+    },
+    {
+      "action_type": "sign_change_detection",
+      "description": "Use a table of values to locate intervals where the function changes sign.",
+      "syntax": "Create table with x values and observe sign changes in y.",
+      "example": "x: -3, -2, -1, 0, 1, 2, 3; y: positive, positive, positive, negative, negative, negative, positive → roots between x = -1 and 0, and between x = 2 and 3.",
+      "note": "This is a SAT strategy for problems with non-integer roots."
+    },
+    {
+      "action_type": "discriminant_analysis",
+      "description": "Determine the nature of solutions without graphing, using the discriminant.",
+      "syntax": "Δ = b² - 4ac",
+      "example": "For 2x² + 8x + 6 = 0, Δ = 64 - 48 = 16 > 0 → two real solutions.",
+      "note": "This confirms the number of x-intercepts before graphing."
+    },
+    {
+      "action_type": "vertex_and_roots",
+      "description": "Find the vertex first, then use symmetry to find roots. This is a powerful SAT shortcut.",
+      "syntax": "Find vertex (h, k) using h = -b/(2a). Then roots are h ± √(-k/a) when k ≤ 0.",
+      "example": "For f(x) = 2x² - 8x + 6, vertex at (2, -2), roots at 2 ± √(1) = 1 and 3.",
+      "note": "This avoids the quadratic formula entirely in many SAT problems."
+    }
+  ],
+  "expected_desmos_outputs": [
+    {
+      "type": "intersection_points",
+      "description": "Coordinates where y = ax² + bx + c and y = 0 intersect.",
+      "interpretation": "The x-values are the exact real solutions to the equation.",
+      "example": "For x² - 5x - 14 = 0, intersections at (-2, 0) and (7, 0), so x = -2 and x = 7."
+    },
+    {
+      "type": "parabola_graph",
+      "description": "The parabola shows the shape, direction (a > 0 opens up, a < 0 opens down), and x-intercepts.",
+      "interpretation": "Visual confirmation of the number and location of solutions.",
+      "example": "A parabola opening upward with vertex below the x-axis has two x-intercepts."
+    },
+    {
+      "type": "table_values",
+      "description": "Tabulated values showing where the function is positive, negative, or zero.",
+      "interpretation": "Identifying sign changes pinpoints intervals containing roots.",
+      "example": "Table showing f(0) = -14 (negative) and f(8) = 10 (positive) → root between x = 0 and x = 8."
+    }
+  ],
+  "interpretation_and_answer_logic": {
+    "instructions": "The x-intercepts of the parabola are the solutions to the quadratic equation. Read the x-coordinates where the graph crosses the x-axis. If the parabola doesn't cross, there are no real solutions. Click on the intersection points to see their exact coordinates. For SAT problems asking for the positive solution, select the larger x-value from the two roots. If asked for the product of roots, multiply the two x-intercepts. If asked for the sum, add them. The vertex is exactly halfway between the roots, useful for checking work.",
+    "format": "x = [root1], [root2] or no real solutions if Δ < 0.",
+    "sat_strategies": {
+      "positive_root_only": "When the SAT asks for 'the positive solution,' identify which root has x > 0 and select that one.",
+      "sum_or_product": "Sum of roots = -b/a, product = c/a. Use these to answer questions without finding the actual roots.",
+      "rational_roots": "If the discriminant is a perfect square, the roots are rational. If not, the roots are irrational conjugates.",
+      "multiple_choice": "SAT answers often include the roots or expressions derived from them. Work backward: check which answer choices satisfy the equation."
+    }
+  },
+  "coaching_steps": [
+    {
+      "id": "step-1-identify-coefficients",
+      "title": "Identify a, b, c in the equation",
+      "instruction": "Write the quadratic in standard form: ax² + bx + c = 0. Identify coefficients.",
+      "hint": "The equation MUST equal zero before identifying a, b, c.",
+      "why": "Standard form is required for the quadratic formula, factoring, and discriminant analysis. Many SAT problems give non-standard forms that need rearrangement first."
+    },
+    {
+      "id": "step-2-determine-discriminant",
+      "title": "Calculate the discriminant",
+      "instruction": "Compute Δ = b² - 4ac. If Δ > 0, two real solutions; if Δ = 0, one real solution; if Δ < 0, no real solutions.",
+      "hint": "The discriminant tells you how many x-intercepts to expect.",
+      "why": "Understanding the number of solutions saves time and prevents hunting for non-existent roots. This is a core SAT skill."
+    },
+    {
+      "id": "step-3-enter-in-desmos",
+      "title": "Plot the equation in Desmos",
+      "instruction": "Type the equation in standard form: ax² + bx + c = 0. Or define f(x) = ax² + bx + c and look for x-intercepts.",
+      "hint": "For f(x) = ax² + bx + c, the x-intercepts are where f(x) = 0.",
+      "why": "The visual approach in Desmos is the fastest and most reliable way to find roots on test day."
+    },
+    {
+      "id": "step-4-locate-x-intercepts",
+      "title": "Find the x-intercepts",
+      "instruction": "Click on the points where the graph crosses the x-axis. Read the x-coordinates.",
+      "hint": "If the graph touches the x-axis at one point, there's a double root (one solution, repeated).",
+      "why": "The x-intercepts are the visual representation of the solutions. Desmos provides exact coordinates when you click."
+    },
+    {
+      "id": "step-5-verify-and-answer",
+      "title": "Verify and state the solution(s)",
+      "instruction": "Check that the x-values make the equation true. Then state the roots as requested (all, positive, sum, product, etc.).",
+      "hint": "Substitute the root back into the original equation to verify.",
+      "why": "Verification catches mistakes and ensures the answer matches the SAT question format."
+    }
+  ],
+  "common_mistakes": [
+    "Not setting the equation equal to zero before identifying a, b, c or graphing.",
+    "Reading y-coordinates instead of x-coordinates at intercepts.",
+    "Forgetting that some quadratics have no real solutions (Δ < 0).",
+    "Confusing the vertex with the roots (the vertex is the turning point, roots are x-intercepts).",
+    "Missing negative solutions when the SAT asks for 'all solutions'.",
+    "Using = instead of ~ for regression when the problem gives data points.",
+    "Forgetting that f(x) and y are interchangeable: when y = 0, f(x) = 0.",
+    "Assuming all roots are integers. SAT often includes irrational roots that still appear on the graph.",
+    "Misinterpreting a double root (one solution) vs two distinct roots.",
+    "Forgetting the ± in the quadratic formula."
+  ],
+  "confidence_hints": [
+    "If the discriminant (b² - 4ac) is a perfect square, the roots are rational and can be found by factoring.",
+    "The vertex's x-coordinate is exactly the average of the two roots: h = (r₁ + r₂) / 2.",
+    "The number of x-intercepts always matches the number of real solutions (0, 1, or 2).",
+    "If the parabola doesn't cross the x-axis, the answer choices will include 'no real solutions' or complex numbers (not on SAT).",
+    "A quadratic opening upward (a > 0) with vertex below x-axis must have two real roots.",
+    "If a and c have opposite signs, there are always two real roots (product negative).",
+    "The sum of roots is -b/a. This is often asked on the SAT instead of finding the roots themselves.",
+    "The product of roots is c/a. This is another common SAT question type.",
+    "If one root is known, the other can be found using sum or product. This is a FAST SAT strategy."
+  ],
+  "sat_tips": {
+    "positive_solution": "When the SAT asks for 'the positive solution,' there will be exactly one positive root. Identify it quickly without solving both.",
+    "sum_roots": "Instead of solving, use -b/a if the question asks for the sum of solutions.",
+    "product_roots": "Use c/a if the question asks for the product of solutions.",
+    "multiple_choice": "Plug answer choices into the equation. The one that makes it true is the solution. This saves solving.",
+    "graphical_check": "Always use Desmos to verify. One graph can prevent multiple mistakes.",
+    "factoring_test": "If the discriminant is a perfect square, factor the equation: (x - r₁)(x - r₂) = 0.",
+    "no_real_solutions": "If the SAT asks for 'real solutions' and the discriminant < 0, the answer is 'no real solutions.'"
+  },
+  "examples_provided": [
+    {
+      "question": "What is the positive solution to x² - 5x - 14 = 0?",
+      "desmos_setup": [
+        "Enter: x² - 5x - 14 = 0",
+        "Desmos shows intersections at x = -2 and x = 7"
+      ],
+      "resolved_parameters": {
+        "roots": [-2, 7],
+        "positive_root": 7
+      },
+      "final_solution": "7",
+      "explanation": "Desmos graphs the parabola and the line y = 0. The intersections are at x = -2 and x = 7. The positive solution is x = 7. This is the fastest way to solve on test day."
+    },
+    {
+      "question": "Find all real solutions to 2x² + 8x + 6 = 0.",
+      "desmos_setup": [
+        "Enter: 2x² + 8x + 6 = 0",
+        "Desmos shows intersections at x = -1 and x = -3"
+      ],
+      "resolved_parameters": {
+        "roots": [-3, -1]
+      },
+      "final_solution": "x = -3 and x = -1",
+      "explanation": "Desmos graphs the equation and shows both x-intercepts. Both are negative, which is why the problem says 'all real solutions.'"
+    },
+    {
+      "question": "What is the sum of the roots of 3x² - 12x + 9 = 0?",
+      "desmos_setup": [
+        "Recognize: sum of roots = -b/a = 12/3 = 4",
+        "Alternative: graph to find roots: x = 1 and x = 3",
+        "Sum = 4"
+      ],
+      "resolved_parameters": {
+        "roots": [1, 3],
+        "sum": 4
+      },
+      "final_solution": "4",
+      "explanation": "Using the sum of roots formula is 5x faster than graphing or solving. The SAT loves this question type."
+    },
+    {
+      "question": "What is the product of the roots of x² + 6x + 5 = 0?",
+      "desmos_setup": [
+        "Recognize: product of roots = c/a = 5/1 = 5",
+        "Alternative: graph to find roots: x = -1 and x = -5",
+        "Product = (-1)(-5) = 5"
+      ],
+      "resolved_parameters": {
+        "roots": [-5, -1],
+        "product": 5
+      },
+      "final_solution": "5",
+      "explanation": "The product of roots formula is instant. A must-know SAT strategy."
+    },
+    {
+      "question": "How many real solutions does 2x² + 4x + 5 = 0 have?",
+      "desmos_setup": [
+        "Calculate discriminant: Δ = b² - 4ac = 16 - 40 = -24",
+        "Δ < 0, so no real solutions",
+        "Desmos graph confirms: parabola opens upward and stays entirely above x-axis"
+      ],
+      "resolved_parameters": {
+        "discriminant": -24,
+        "solutions": "none"
+      },
+      "final_solution": "0 real solutions",
+      "explanation": "The discriminant is negative, so the parabola never crosses the x-axis. Desmos shows the parabola entirely above the x-axis (a > 0, vertex y > 0)."
+    },
+    {
+      "question": "The quadratic function f has zeros at x = -2 and x = 5. What is the sum of the zeros?",
+      "desmos_setup": [
+        "Zeros are given: r₁ = -2, r₂ = 5",
+        "Sum = -2 + 5 = 3"
+      ],
+      "resolved_parameters": {
+        "roots": [-2, 5],
+        "sum": 3
+      },
+      "final_solution": "3",
+      "explanation": "This tests understanding of the vocabulary 'zeros' and 'sum of roots.' No graphing needed. The roots are simply added."
+    },
+    {
+      "question": "Which of the following is a solution to 2x² + 6x + 3 = 0?",
+      "desmos_setup": [
+        "Graph: 2x² + 6x + 3 = 0",
+        "Intersections at x ≈ -0.634 and x ≈ -2.366",
+        "Check answer choices for these approximate values"
+      ],
+      "resolved_parameters": {
+        "roots": ["(-3 ± √3)/2", "approximately -2.366 and -0.634"]
+      },
+      "final_solution": "Check answer choices for the exact radical form.",
+      "explanation": "SAT multiple choice gives irrational roots in radical form. Desmos provides decimal approximations; match to the exact radical option or plug choices back into the equation."
+    }
+  ]
+}

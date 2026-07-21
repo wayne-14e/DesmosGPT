@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "id": "function-modeling",
+    "version": "2.0.0",
+    "author": "DesmosGPT",
+    "lastUpdated": "2026-07-21",
+    "tags": [
+      "function",
+      "model",
+      "linear",
+      "exponential",
+      "growth",
+      "decay",
+      "quadratic",
+      "word-problem",
+      "SAT-Math",
+      "modeling",
+      "real-world",
+      "scenario",
+      "prediction"
+    ]
+  },
+  "general_information": {
+    "title": "Function Modeling: Linear, Exponential, and Quadratic Scenarios",
+    "description": "Comprehensive guide to modeling real-world SAT scenarios using linear, exponential, and quadratic functions. Covers parameter extraction, function construction, and interpretation of models in context. Includes strategies for population growth, financial modeling, projectile motion, and more.",
+    "sat_topic": "Algebra: Modeling",
+    "subtopics": [
+      "Linear Models",
+      "Exponential Growth and Decay",
+      "Quadratic Models",
+      "Word Problems",
+      "Parameter Extraction",
+      "Contextual Interpretation",
+      "Prediction and Evaluation"
+    ],
+    "difficulty": "advanced",
+    "estimated_time_seconds": "40",
+    "prerequisites": [
+      "Understanding of linear, exponential, and quadratic functions",
+      "Ability to extract parameters from word problems",
+      "Knowledge of intercepts, slopes, and growth factors",
+      "Familiarity with function notation f(x)"
+    ],
+    "related_techniques": [
+      "linear-regression",
+      "quadratic-regression",
+      "quadratic-roots",
+      "exponential-regression"
+    ]
+  },
+  "function_modeling_fundamentals": {
+    "linear_functions": {
+      "form": "f(x) = mx + b",
+      "type": "Constant rate of change (additive)",
+      "parameters": "m = slope/rate of change; b = y-intercept/initial value",
+      "sat_examples": "Distance traveled at constant speed, cost per item, linear depreciation",
+      "growth_type": "Same amount added each period",
+      "key_strategy": "Identify two points and find slope, or extract rate from word problem."
+    },
+    "exponential_functions": {
+      "form": "f(x) = a·bˣ",
+      "type": "Constant percent change (multiplicative)",
+      "parameters": "a = initial value (y-intercept); b = growth factor (1 + r for growth, 1 - r for decay)",
+      "sat_examples": "Population growth, compound interest, radioactive decay, drug metabolism",
+      "growth_type": "Same percent change each period",
+      "key_strategy": "Identify initial value and percent change. Convert r to b: if growth r%, b = 1 + r/100; if decay r%, b = 1 - r/100."
+    },
+    "quadratic_functions": {
+      "form": "f(x) = ax² + bx + c",
+      "type": "Acceleration (changing rate of change)",
+      "parameters": "a = acceleration/curvature; b and c define shape",
+      "sat_examples": "Projectile motion (height over time), area optimization, profit maximization",
+      "growth_type": "Rate of change changes linearly",
+      "key_strategy": "Find vertex for maximum/minimum, roots for zeros, or use regression with 3 points."
+    },
+    "parameter_extraction_flow": {
+      "linear": "Identify rate (constant difference) and initial value (y at x = 0)",
+      "exponential": "Identify initial value and percent change. If doubling/halving, b = 2 or b = 0.5",
+      "quadratic": "Identify vertex (max/min) and at least one other point, or identify roots (zeros) and one other point."
+    }
+  },
+  "desmos_modeling_methods": {
+    "direct_function_plotting": {
+      "description": "Enter the function directly once you've derived it from the word problem.",
+      "syntax": "f(x) = expression",
+      "application": "Quickly visualize the model and verify it matches the scenario."
+    },
+    "slider_parameter_adjustment": {
+      "description": "Use sliders for unknown parameters to fit the model to given data points.",
+      "syntax": "a, b, c with sliders",
+      "application": "Great for 'what if' scenarios and sensitivity analysis."
+    },
+    "regression_with_data": {
+      "description": "When given data points, use regression to find the best-fit model.",
+      "syntax": "y₁ ~ m x₁ + b (linear), y₁ ~ a b^x₁ (exponential), y₁ ~ ax₁² + bx₁ + c (quadratic)",
+      "application": "Perfect for tables of values and data-driven problems."
+    },
+    "piecewise_modeling": {
+      "description": "For scenarios with different behaviors in different intervals, use piecewise functions.",
+      "syntax": "f(x) = { condition1: expression1, condition2: expression2 }",
+      "application": "When context changes (e.g., discounts, tiered pricing, tax brackets)."
+    },
+    "transformation_modeling": {
+      "description": "Start with a parent function and apply transformations based on context.",
+      "syntax": "f(x) = a·parent(b(x - h)) + k",
+      "application": "Useful for shifts, stretches, and reflections in modeling."
+    }
+  },
+  "required_desmos_actions": [
+    {
+      "action_type": "linear_modeling",
+      "description": "Enter a linear function to model constant rate scenarios. Use f(x) = mx + b.",
+      "syntax": "f(x) = m x + b",
+      "example": "f(x) = 2.5x + 50 (cost of x items with base fee)",
+      "parameters": "m = rate per unit, b = initial/fixed cost"
+    },
+    {
+      "action_type": "exponential_modeling",
+      "description": "Enter an exponential function for growth or decay. Use f(x) = a·bˣ.",
+      "syntax": "f(x) = a * b^x",
+      "example": "f(x) = 100 * 1.15^x (15% annual growth)",
+      "parameters": "a = initial amount, b = growth factor (1 + r)"
+    },
+    {
+      "action_type": "quadratic_modeling",
+      "description": "Enter a quadratic function for scenarios with acceleration. Use f(x) = ax² + bx + c.",
+      "syntax": "f(x) = a x^2 + b x + c",
+      "example": "f(t) = -16t² + 64t + 0 (projectile height in feet)",
+      "parameters": "a = acceleration (gravity), b = initial velocity, c = initial height"
+    },
+    {
+      "action_type": "slider_creation",
+      "description": "Create sliders for parameters to explore the model dynamically.",
+      "syntax": "a, b, c (variables become sliders automatically)",
+      "example": "Type a = 1, then adjust to see effect on f(x) = a·bˣ",
+      "application": "Understand how each parameter affects the model."
+    },
+    {
+      "action_type": "point_evaluation",
+      "description": "Evaluate the function at specific x-values to make predictions.",
+      "syntax": "f(target_x)",
+      "example": "f(5) computes the value at x = 5",
+      "application": "Quickly answer prediction questions."
+    },
+    {
+      "action_type": "regression_fitting",
+      "description": "Use regression to find the model from data points.",
+      "syntax": "y₁ ~ m x₁ + b (linear), y₁ ~ a b^x₁ (exponential), y₁ ~ a x₁² + b x₁ + c (quadratic)",
+      "example": "y₁ ~ 2.5 x₁ + 50",
+      "application": "For problems providing tables of values."
+    }
+  ],
+  "expected_desmos_outputs": [
+    {
+      "type": "function_graph",
+      "description": "The curve showing the model's behavior over the domain.",
+      "interpretation": "Visual representation of the modeled scenario. The graph reveals trends, intercepts, and asymptotes.",
+      "examples": "Linear: straight line; Exponential: rapid growth/decay curve; Quadratic: U-shape or ∩-shape."
+    },
+    {
+      "type": "specific_values",
+      "description": "Function evaluations at requested inputs.",
+      "interpretation": "Predicted values for the scenario at specific times/quantities.",
+      "examples": "f(10) = 250 (predicted population after 10 days)"
+    },
+    {
+      "type": "intercepts",
+      "description": "Points where the graph crosses axes.",
+      "interpretation": "y-intercept = initial value; x-intercepts = zeros (break-even points, landings).",
+      "examples": "For projectile: x-intercepts = launch and landing times."
+    },
+    {
+      "type": "vertex_turning_point",
+      "description": "The maximum or minimum point of a quadratic.",
+      "interpretation": "Maximum height, maximum profit, minimum cost, etc.",
+      "examples": "Vertex shows the peak of a trajectory or optimal value."
+    },
+    {
+      "type": "regression_parameters",
+      "description": "Best-fit parameters from regression.",
+      "interpretation": "The exact coefficients defining the model.",
+      "examples": "m = 2.5, b = 50 for linear; a = 100, b = 1.15 for exponential."
+    }
+  ],
+  "interpretation_and_answer_logic": {
+    "instructions": "Interpret the function model in the context of the word problem. The y-intercept (value at x = 0) always represents the initial quantity. The rate of change (linear slope) indicates the change per unit. The growth factor (exponential base) indicates the multiplier per unit. The vertex (quadratic) indicates the maximum or minimum value. Evaluate at the requested x-value to make predictions. Always check that your answer makes sense in the real-world context with appropriate units.",
+    "format": "f(x) = [expression] where x represents [context variable] and f(x) represents [output quantity]. Predictions: f([value]) = [result] [units].",
+    "sat_strategies": {
+      "parameter_extraction": "Look for key words: 'each' or 'per' → linear; 'percent' or 'doubles' → exponential; 'maximum' or 'height' → quadratic.",
+      "initial_value": "Always identify the value when x = 0. This is often given as 'initial,' 'starting,' or 'at the beginning.'",
+      "rate_identification": "Linear: 'increases by 5 each year' → m = 5. Exponential: 'increases by 15% each year' → b = 1.15.",
+      "vertex_identification": "Quadratic word problems often give the maximum (height, profit) or ask for the optimal value. Find the vertex."
+    }
+  },
+  "coaching_steps": [
+    {
+      "id": "step-1-read-and-identify",
+      "title": "Read the scenario and identify the function type",
+      "instruction": "Look for key clues: constant change → linear; percentage change → exponential; maximum/minimum or acceleration → quadratic.",
+      "hint": "Keywords: 'each year,' 'per hour' → linear. 'Percent,' 'doubles,' 'half-life' → exponential. 'Maximum height,' 'projectile,' 'optimal' → quadratic.",
+      "why": "Choosing the correct model type is the most critical decision. The wrong type leads to wrong answers."
+    },
+    {
+      "id": "step-2-extract-parameters",
+      "title": "Extract the parameters from the problem statement",
+      "instruction": "Identify the initial value (y-intercept), rate of change, growth factor, or vertex coordinates from the text.",
+      "hint": "The initial value is almost always given explicitly. For exponential, find the percent change. For quadratic, find the vertex and a point.",
+      "why": "Parameters define the specific model. Accurate extraction is essential for correct modeling."
+    },
+    {
+      "id": "step-3-build-and-enter-model",
+      "title": "Build the function and enter it into Desmos",
+      "instruction": "Use the correct form: f(x) = mx + b (linear), f(x) = a·bˣ (exponential), or f(x) = ax² + bx + c (quadratic). Enter it in Desmos.",
+      "hint": "Use f(x) notation for clarity. Add sliders to explore if needed.",
+      "why": "The function captures the mathematical relationship described in the problem."
+    },
+    {
+      "id": "step-4-visualize-and-verify",
+      "title": "Visualize the model and verify it matches the scenario",
+      "instruction": "Examine the graph. Does it have the expected shape? Does it pass through the given points? Does the intercept match the initial value?",
+      "hint": "Check specific values against the word problem. If given data points, verify they lie on the curve.",
+      "why": "Visual verification catches parameter extraction errors before proceeding."
+    },
+    {
+      "id": "step-5-evaluate-and-interpret",
+      "title": "Evaluate the function at the requested input and interpret the result",
+      "instruction": "Type f(target_x) to compute the value. Interpret the result in the context of the problem with appropriate units.",
+      "hint": "Always include units in your final answer. Check if the answer is reasonable.",
+      "why": "The final step connects the mathematics back to the real-world scenario."
+    }
+  ],
+  "common_mistakes": [
+    "Choosing linear when the scenario has a percentage change (exponential).",
+    "Choosing exponential when the scenario has a constant additive change (linear).",
+    "Choosing quadratic when the scenario is actually linear or exponential (overcomplicating).",
+    "Forgetting that exponential growth/decay uses b = 1 + r, not r directly.",
+    "Confusing decay rate with growth rate in exponential models.",
+    "Forgetting to convert percentages to decimals in exponential models.",
+    "Misidentifying the initial value (y-intercept). It's always the value when x = 0.",
+    "Using x = 1 as the initial value instead of x = 0.",
+    "Forgetting units when interpreting results.",
+    "Not verifying the model against given data points.",
+    "Confusing vertex (max/min) with roots (zeros) in quadratic models."
+  ],
+  "confidence_hints": [
+    "If the problem says 'constant rate,' 'linear,' or 'each year/ per hour' → use linear.",
+    "If the problem says 'percent,' 'grows by,' 'doubles,' 'halves,' or 'decays by' → use exponential.",
+    "If the problem describes a projectile, maximum, optimum, or has a squared term → use quadratic.",
+    "The y-intercept in any model is always the value when x = 0.",
+    "For exponential, if the quantity doubles, b = 2. If it triples, b = 3. If it halves, b = 0.5.",
+    "For exponential decay at 15%, b = 0.85. For growth at 15%, b = 1.15.",
+    "The vertex of a quadratic is (-b/(2a), f(-b/(2a))). The SAT loves asking for this.",
+    "Check that f(0) matches the initial value given in the problem.",
+    "If you have data points, use regression to find the model automatically.",
+    "Always plug your answer back into the original word problem to see if it makes sense."
+  ],
+  "sat_tips": {
+    "linear_rate": "If something changes 'by a constant amount,' it's linear. Find the rate by taking the change in y over change in x.",
+    "exponential_percent": "If something changes 'by a constant percentage,' it's exponential. If it doubles in 3 hours, b = 2^(1/3) for growth per hour.",
+    "quadratic_vertex": "For projectile motion, the vertex is the maximum height. Use h = -b/(2a) to find the time to reach it.",
+    "function_evaluation": "After building the model, use f(x) to quickly evaluate at any x-value. This is faster than mental math.",
+    "regression_shortcut": "If you have a table, use regression in Desmos. It finds the equation instantly.",
+    "check_units": "Always check units. If the model is in years, f(5) gives a value after 5 years, not 5 units.",
+    "multiple_choice": "Plug answer choices into the function. The one that matches the scenario is correct. This saves solving time.",
+    "two_points": "For linear models, find two points and use slope formula. For exponential, find two points and solve for a and b."
+  },
+  "examples_provided": [
+    {
+      "question": "The population of a town is modeled by P(t) = 5000(1.04)ᵗ, where t is the number of years since 2020. What was the population in 2020? What is the annual growth rate?",
+      "desmos_setup": [
+        "Enter: P(t) = 5000 * 1.04^t",
+        "Evaluate: P(0) = 5000",
+        "Interpret: growth factor = 1.04 → rate = 4%"
+      ],
+      "resolved_parameters": {
+        "initial_population": 5000,
+        "growth_rate": 0.04,
+        "growth_factor": 1.04
+      },
+      "final_solution": "2020 population: 5000; Annual growth rate: 4%",
+      "explanation": "The initial value is at t = 0, which is 5000. The growth factor 1.04 means the population grows by 4% each year. This is the simplest exponential model on the SAT."
+    },
+    {
+      "question": "A car depreciates by 12% each year. If it was worth $25,000 when new, write a function to model its value after t years.",
+      "desmos_setup": [
+        "Initial value: a = 25000",
+        "Decay rate: r = 12% → b = 1 - 0.12 = 0.88",
+        "Function: V(t) = 25000 * 0.88^t"
+      ],
+      "resolved_parameters": {
+        "initial_value": 25000,
+        "decay_factor": 0.88,
+        "annual_decay": 0.12
+      },
+      "final_solution": "V(t) = 25000(0.88)ᵗ",
+      "explanation": "Depreciation means decay. After 1 year, the car is worth 88% of its value (100% - 12%). The model V(t) = 25000·0.88ᵗ captures this."
+    },
+    {
+      "question": "The height of a projectile is given by h(t) = -16t² + 64t + 0, where t is seconds. What is the maximum height and when does it occur?",
+      "desmos_setup": [
+        "Enter: h(t) = -16t^2 + 64t",
+        "Vertex occurs at t = -b/(2a) = -64/(2*(-16)) = 2 seconds",
+        "Evaluate: h(2) = -16(4) + 64(2) = -64 + 128 = 64 feet"
+      ],
+      "resolved_parameters": {
+        "time_to_max": 2,
+        "max_height": 64,
+        "a": -16,
+        "b": 64,
+        "c": 0
+      },
+      "final_solution": "Maximum height of 64 feet at t = 2 seconds",
+      "explanation": "The vertex formula t = -b/(2a) finds the time of maximum height. h(t) at that time is the maximum height. Negative a means the parabola opens downward (maximum)."
+    },
+    {
+      "question": "The number of bacteria in a culture doubles every 2 hours. If there are 100 bacteria initially, how many will there be after 8 hours?",
+      "desmos_setup": [
+        "Initial: a = 100",
+        "Growth: doubles every 2 hours → b = 2^(1/2) = √2 per hour",
+        "Function: N(t) = 100 * (√2)^t = 100 * 2^(t/2)",
+        "Evaluate: N(8) = 100 * 2^(8/2) = 100 * 2^4 = 1600"
+      ],
+      "resolved_parameters": {
+        "initial": 100,
+        "doubling_time": 2,
+        "growth_factor": "√2 per hour"
+      },
+      "final_solution": "1600 bacteria",
+      "explanation": "The exponential model uses the doubling time. Since the quantity doubles every 2 hours, after 8 hours it doubles 4 times: 100 → 200 → 400 → 800 → 1600."
+    },
+    {
+      "question": "A population increases by 20% each year. If it starts at 1500, how many people will there be after 5 years?",
+      "desmos_setup": [
+        "Initial: a = 1500",
+        "Growth rate: 20% → b = 1.20",
+        "Function: P(t) = 1500 * 1.20^t",
+        "Evaluate: P(5) = 1500 * 1.20^5 ≈ 3732.48"
+      ],
+      "resolved_parameters": {
+        "initial": 1500,
+        "growth_rate": 0.20,
+        "growth_factor": 1.20
+      },
+      "final_solution": "Approximately 3732 people",
+      "explanation": "The exponential growth model P(t) = 1500·1.20ᵗ gives the population after t years. Evaluate at t = 5 for the answer. SAT often rounds to nearest whole person."
+    },
+    {
+      "question": "A linear function represents the cost of a taxi ride: C(x) = 3x + 2.50, where x is miles. What is the base fee and the cost per mile?",
+      "desmos_setup": [
+        "Enter: C(x) = 3x + 2.50",
+        "Identify: m = 3, b = 2.50"
+      ],
+      "resolved_parameters": {
+        "base_fee": 2.50,
+        "cost_per_mile": 3.00
+      },
+      "final_solution": "Base fee: $2.50; Cost per mile: $3.00",
+      "explanation": "In linear form f(x) = mx + b, m is the rate (cost per mile) and b is the y-intercept (base fee). This is a classic SAT interpretation question."
+    },
+    {
+      "question": "The table shows values: (0, 5), (1, 8), (2, 11), (3, 14). Find the linear function that models this data.",
+      "desmos_setup": [
+        "Table: x₁ = [0, 1, 2, 3], y₁ = [5, 8, 11, 14]",
+        "Regression: y₁ ~ m x₁ + b",
+        "Result: m = 3, b = 5"
+      ],
+      "resolved_parameters": {
+        "m": 3,
+        "b": 5,
+        "r²": 1
+      },
+      "final_solution": "f(x) = 3x + 5",
+      "explanation": "The data shows constant rate of change: y increases by 3 each time x increases by 1. Regression confirms m = 3, b = 5. r² = 1 indicates perfect fit."
+    },
+    {
+      "question": "A quadratic function models the height of a ball thrown upward: it reaches a maximum of 50 feet at 2 seconds and lands at 4 seconds. Write the function.",
+      "desmos_setup": [
+        "Vertex: (2, 50)",
+        "Roots: (0, 0) and (4, 0) since it starts and ends at ground level",
+        "Use factored form: h(t) = a(t - 0)(t - 4) = at(t - 4)",
+        "Plug vertex: 50 = a(2)(2 - 4) = a(2)(-2) = -4a → a = -12.5",
+        "Function: h(t) = -12.5t(t - 4) = -12.5t² + 50t"
+      ],
+      "resolved_parameters": {
+        "a": -12.5,
+        "b": 50,
+        "c": 0,
+        "vertex": "(2, 50)",
+        "roots": [0, 4]
+      },
+      "final_solution": "h(t) = -12.5t² + 50t",
+      "explanation": "Quadratic word problems often have identifiable vertex and roots. The vertex gives the maximum, and roots give start/end points. The factored form makes finding a straightforward."
+    }
+  ]
+}

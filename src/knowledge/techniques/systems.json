@@ -1,0 +1,358 @@
+{
+  "metadata": {
+    "id": "systems",
+    "version": "2.0.0",
+    "author": "DesmosGPT",
+    "lastUpdated": "2026-07-21",
+    "tags": [
+      "system",
+      "equations",
+      "linear",
+      "intersection",
+      "substitution",
+      "elimination",
+      "SAT-Math",
+      "simultaneous",
+      "graphing",
+      "solution",
+      "no-solution",
+      "infinite-solutions"
+    ]
+  },
+  "general_information": {
+    "title": "Systems of Equations: Solving with Desmos",
+    "description": "Comprehensive guide to solving systems of linear equations using Desmos graphing. Covers systems with one solution, no solution, and infinite solutions. Includes strategies for graphing, substitution, and elimination methods with special attention to SAT problem types and multiple-choice strategies.",
+    "sat_topic": "Algebra: Systems of Equations",
+    "subtopics": [
+      "Linear Systems",
+      "Graphing Solutions",
+      "Substitution Method",
+      "Elimination Method",
+      "Intersection Points",
+      "Parallel Lines (No Solution)",
+      "Coincident Lines (Infinite Solutions)",
+      "Word Problems with Systems"
+    ],
+    "difficulty": "intermediate",
+    "estimated_time_seconds": "25",
+    "prerequisites": [
+      "Understanding of linear equations and slope-intercept form",
+      "Ability to solve equations for y",
+      "Knowledge of graphing lines",
+      "Understanding of slope and intercept"
+    ],
+    "related_techniques": [
+      "linear-regression",
+      "function-modeling",
+      "quadratic-regression"
+    ]
+  },
+  "systems_fundamentals": {
+    "solution_types": {
+      "one_solution": "Lines intersect at exactly one point. Slopes are different (m₁ ≠ m₂). The system is consistent and independent.",
+      "no_solution": "Lines are parallel and never intersect. Slopes are equal but y-intercepts differ (m₁ = m₂, b₁ ≠ b₂). The system is inconsistent.",
+      "infinite_solutions": "Lines are coincident (same line). Slopes and y-intercepts are equal (m₁ = m₂, b₁ = b₂). The system is consistent and dependent."
+    },
+    "standard_forms": {
+      "slope_intercept": "y = mx + b (best for graphing)",
+      "standard": "Ax + By = C (common in SAT problems)",
+      "point_slope": "y - y₁ = m(x - x₁)"
+    },
+    "solution_interpretation": "The intersection point (x, y) represents the values that satisfy ALL equations in the system simultaneously.",
+    "sat_approaches": {
+      "graphing": "Fastest and most visual approach. Use Desmos to graph both lines and click the intersection.",
+      "substitution": "Solve one equation for a variable and substitute into the other.",
+      "elimination": "Add or subtract equations to eliminate a variable."
+    }
+  },
+  "desmos_solving_methods": {
+    "direct_graphing": {
+      "description": "Enter both equations in slope-intercept form (y = mx + b) on separate lines.",
+      "syntax": "y = 2x + 1 and y = -x + 4 on separate lines",
+      "application": "Fastest method for SAT. Desmos automatically shows the intersection point.",
+      "advantages": "No algebra needed. Visual confirmation of solution type."
+    },
+    "standard_form_graphing": {
+      "description": "Enter equations in standard form (Ax + By = C) directly.",
+      "syntax": "2x + 3y = 12 and x - y = 1",
+      "application": "Works when equations are given in standard form. Desmos automatically graphs them.",
+      "note": "Desmos handles standard form without conversion."
+    },
+    "implicit_graphing": {
+      "description": "Enter equations without solving for y. Desmos handles all forms.",
+      "syntax": "x + y = 5 and 2x - y = 1",
+      "application": "Quickest for any equation form. No algebra rearrangement needed.",
+      "advantages": "Eliminates algebra errors."
+    },
+    "table_method": {
+      "description": "Create tables of values for each equation and find common points.",
+      "syntax": "Create x₁ and y₁ tables for each equation",
+      "application": "Useful when equations are complex or you want to verify values.",
+      "note": "Slower than direct graphing but helpful for verification."
+    },
+    "slider_exploration": {
+      "description": "Use sliders to solve systems with parameters.",
+      "syntax": "y = m x + b with m and b as sliders",
+      "application": "When the system includes unknown parameters or you want to explore all solutions."
+    }
+  },
+  "required_desmos_actions": [
+    {
+      "action_type": "direct_equation_entry",
+      "description": "Enter each equation on a separate line in Desmos.",
+      "syntax": "y = mx + b or Ax + By = C",
+      "example": "y = 2x + 1 (line 1), y = -x + 4 (line 2)",
+      "note": "Each equation must be on its own line. Desmos automatically graphs both."
+    },
+    {
+      "action_type": "intersection_detection",
+      "description": "Click on the intersection point of the lines to reveal coordinates.",
+      "syntax": "Click on the point where lines cross",
+      "example": "Desmos displays (1, 3) as the solution",
+      "note": "If lines don't intersect, there's no solution. If they overlap, there are infinite solutions."
+    },
+    {
+      "action_type": "parallel_line_detection",
+      "description": "Identify parallel lines (no solution) by visual inspection.",
+      "syntax": "Look for lines with same slope but different y-intercepts",
+      "example": "y = 2x + 1 and y = 2x - 3 are parallel → no solution",
+      "note": "Parallel lines never intersect, so no solution exists."
+    },
+    {
+      "action_type": "coincident_line_detection",
+      "description": "Identify coincident lines (infinite solutions) by visual inspection.",
+      "syntax": "Look for lines that are identical or multiples of each other",
+      "example": "y = 2x + 1 and 2y = 4x + 2 are the same line → infinite solutions",
+      "note": "When lines overlap completely, every point on the line is a solution."
+    },
+    {
+      "action_type": "system_verification",
+      "description": "Verify the solution by plugging into both original equations.",
+      "syntax": "Check that (x, y) satisfies both equations",
+      "example": "For solution (1, 3): 2(1) + 1 = 3 ✓ and -(1) + 4 = 3 ✓",
+      "note": "Always verify to catch reading errors."
+    }
+  ],
+  "expected_desmos_outputs": [
+    {
+      "type": "two_lines",
+      "description": "Both equations appear as lines on the graph.",
+      "interpretation": "Each line represents all solutions to its equation. The intersection is the solution to both.",
+      "examples": "Line 1 (red) and Line 2 (blue) with different slopes intersecting at one point."
+    },
+    {
+      "type": "intersection_point",
+      "description": "Coordinates of the point where lines intersect.",
+      "interpretation": "These (x, y) coordinates satisfy both equations simultaneously.",
+      "examples": "(3, 7) or (1, 2). Click on the intersection to see exact values."
+    },
+    {
+      "type": "no_intersection",
+      "description": "Lines appear parallel and never meet.",
+      "interpretation": "No solution exists. The system is inconsistent.",
+      "examples": "y = 2x + 1 and y = 2x - 3 (parallel, no solution)."
+    },
+    {
+      "type": "single_line",
+      "description": "Both equations graph as the same line.",
+      "interpretation": "Infinite solutions. Every point on the line satisfies both equations.",
+      "examples": "y = 2x + 1 and 2y = 4x + 2 (same line)."
+    }
+  ],
+  "interpretation_and_answer_logic": {
+    "instructions": "The intersection point is the solution to the system. Read the coordinates of the intersection point. For SAT questions, identify what's being asked: the solution values (x, y), just x, just y, or the sum x + y. If lines are parallel, there is no solution. If lines overlap, there are infinitely many solutions. Always verify the solution by substituting back into both original equations.",
+    "format": "Solution: (x, y) = (a, b) or x = a, y = b. For SAT questions: if asked for x only, give the x-coordinate; if asked for y only, give the y-coordinate; if asked for x + y, add them.",
+    "sat_strategies": {
+      "solution_asking": "When the SAT asks for 'the solution to the system,' give the intersection point coordinates.",
+      "value_asking": "When the SAT asks for 'the value of x' or 'the value of y,' give just that coordinate.",
+      "sum_asking": "When the SAT asks for 'x + y,' add the coordinates.",
+      "no_solution": "When lines are parallel, answer 'no solution' or identify the inconsistent system.",
+      "infinite_solutions": "When lines overlap, answer 'infinitely many solutions' or identify the dependent system."
+    }
+  },
+  "coaching_steps": [
+    {
+      "id": "step-1-enter-equations",
+      "title": "Enter both equations into Desmos",
+      "instruction": "Type each equation on a separate line in Desmos. If in standard form, you can enter directly or solve for y first.",
+      "hint": "For SAT speed, enter directly in any form. Desmos handles all forms automatically.",
+      "why": "Each equation defines a line. The solution to the system is where these lines intersect."
+    },
+    {
+      "id": "step-2-identify-lines",
+      "title": "Identify what the lines show",
+      "instruction": "Look at the two lines. Are they intersecting, parallel, or overlapping?",
+      "hint": "Different slopes → intersect (one solution). Same slope, different intercepts → parallel (no solution). Same line → infinite solutions.",
+      "why": "The relationship between the lines determines the type and number of solutions."
+    },
+    {
+      "id": "step-3-find-intersection",
+      "title": "Find the intersection point",
+      "instruction": "Click on the point where the lines intersect. Desmos displays the coordinates.",
+      "hint": "For exact values, click the point. For approximate values, read from the graph.",
+      "why": "The intersection point gives the exact solution to the system."
+    },
+    {
+      "id": "step-4-read-solution",
+      "title": "Read the solution coordinates",
+      "instruction": "Note the x and y values shown at the intersection point.",
+      "hint": "Write the solution as (x, y) to ensure both values are recorded.",
+      "why": "These values satisfy both equations. The solution is complete."
+    },
+    {
+      "id": "step-5-verify",
+      "title": "Verify the solution",
+      "instruction": "Check that the solution works in both original equations. Desmos automatically verifies, but manual verification builds confidence.",
+      "hint": "Plug the x and y values back into both equations. Both should be true.",
+      "why": "Verification catches reading errors and ensures confidence in your answer."
+    },
+    {
+      "id": "step-6-answer-question",
+      "title": "Answer the specific SAT question",
+      "instruction": "Determine what the question is asking: the full solution, just x, just y, or x + y. Provide exactly what's requested.",
+      "hint": "Read the question carefully. It may ask for a specific value or combination.",
+      "why": "SAT questions often ask for partial information. Answer exactly what's requested."
+    }
+  ],
+  "common_mistakes": [
+    "Not solving equations for y before graphing (though Desmos handles any form).",
+    "Reading only the x or only the y coordinate when both are needed.",
+    "Confusing parallel lines (no solution) with intersecting lines.",
+    "Forgetting that overlapping lines have infinite solutions (not 'one solution').",
+    "Entering equations on the same line instead of separate lines.",
+    "Misreading the intersection point coordinates (swapping x and y).",
+    "Forgetting to check the solution in both original equations.",
+    "Assuming all systems have exactly one solution.",
+    "Confusing 'no solution' with 'x = 0' or 'y = 0.'",
+    "Forgetting that systems can have fractional or decimal solutions.",
+    "Not recognizing when equations are multiples of each other (infinite solutions).",
+    "Using substitution or elimination when graphing is faster."
+  ],
+  "confidence_hints": [
+    "Two lines with different slopes always intersect at exactly one point.",
+    "Parallel lines have the same slope but different y-intercepts. They never intersect.",
+    "Identical lines have the same slope and same y-intercept. They intersect everywhere (infinite solutions).",
+    "The intersection point satisfies BOTH equations. This is a great way to check your work.",
+    "If you're unsure, plug the solution into both equations to verify.",
+    "For SAT multiple choice, you can test answer choices in both equations to find the correct one.",
+    "If the answer choices are just numbers (not coordinates), the SAT is asking for just x or just y.",
+    "The sum x + y is a common SAT question type. Always add the coordinates if asked.",
+    "In word problems, the solution often represents the point where two scenarios are equal (break-even point)."
+  ],
+  "sat_tips": {
+    "graphing_speed": "Enter equations directly in any form. Desmos graphs them instantly. Click the intersection for the solution.",
+    "parallel_check": "If you see parallel lines, the answer is 'no solution.' Don't waste time looking for an intersection.",
+    "multiple_choice": "Test answer choices in both equations. The correct answer satisfies both.",
+    "word_problems": "Write two equations from the word problem. Enter them in Desmos. The intersection is the answer.",
+    "systems_with_parameters": "If a system includes an unknown parameter, graph with sliders to see when solutions exist.",
+    "fractional_solutions": "SAT often has fractional solutions. Click the intersection for exact values, or use algebraic methods."
+  },
+  "examples_provided": [
+    {
+      "question": "Solve the system: y = 2x + 1 and y = -x + 4. What is the solution?",
+      "desmos_setup": [
+        "Equation 1: y = 2x + 1",
+        "Equation 2: y = -x + 4",
+        "Intersection at (1, 3)"
+      ],
+      "resolved_parameters": {
+        "x": 1,
+        "y": 3,
+        "solution_type": "one_solution"
+      },
+      "final_solution": "(1, 3)",
+      "explanation": "The lines intersect at (1, 3). Both equations are satisfied: 3 = 2(1) + 1 and 3 = -1 + 4. This is the most common SAT system type."
+    },
+    {
+      "question": "Solve: 2x + y = 5 and x - y = 1. What is the value of x?",
+      "desmos_setup": [
+        "Equation 1: 2x + y = 5",
+        "Equation 2: x - y = 1",
+        "Intersection at (2, 1)"
+      ],
+      "resolved_parameters": {
+        "x": 2,
+        "y": 1,
+        "solution_type": "one_solution"
+      },
+      "final_solution": "x = 2",
+      "explanation": "The system solves to (2, 1). Since the SAT asked for 'the value of x,' the answer is 2. This tests that you can read the correct coordinate."
+    },
+    {
+      "question": "Solve: y = 3x + 2 and y = 3x - 4. How many solutions does this system have?",
+      "desmos_setup": [
+        "Equation 1: y = 3x + 2",
+        "Equation 2: y = 3x - 4",
+        "Lines are parallel, no intersection"
+      ],
+      "resolved_parameters": {
+        "solution_type": "no_solution",
+        "slope1": 3,
+        "slope2": 3
+      },
+      "final_solution": "No solution (0 solutions)",
+      "explanation": "Both lines have slope 3 but different y-intercepts (2 and -4). They are parallel and never intersect. The system has no solution. This is a common SAT trick."
+    },
+    {
+      "question": "Solve: y = 2x + 1 and 2y = 4x + 2. What is the solution?",
+      "desmos_setup": [
+        "Equation 1: y = 2x + 1",
+        "Equation 2: 2y = 4x + 2 → divide by 2 → y = 2x + 1",
+        "Both equations are the same line"
+      ],
+      "resolved_parameters": {
+        "solution_type": "infinite_solutions",
+        "slope": 2,
+        "y_intercept": 1
+      },
+      "final_solution": "Infinitely many solutions",
+      "explanation": "The second equation simplifies to y = 2x + 1, which is exactly the first equation. The lines are coincident, so every point on the line satisfies both equations. The correct answer is 'infinitely many solutions.'"
+    },
+    {
+      "question": "What is the solution to the system: x + y = 5 and x - y = 1? Find x + y.",
+      "desmos_setup": [
+        "Equation 1: x + y = 5",
+        "Equation 2: x - y = 1",
+        "Intersection at (3, 2)"
+      ],
+      "resolved_parameters": {
+        "x": 3,
+        "y": 2,
+        "sum": 5,
+        "solution_type": "one_solution"
+      },
+      "final_solution": "x + y = 5",
+      "explanation": "The system solves to (3, 2). The sum x + y = 5. The SAT often asks for x + y instead of the individual coordinates. Note that x + y = 5 also matches the first equation, which is another way to check."
+    },
+    {
+      "question": "A customer bought 3 apples and 2 oranges for $7.00, and 5 apples and 3 oranges for $11.50. What is the cost of one apple?",
+      "desmos_setup": [
+        "Let a = apples, o = oranges",
+        "Equation 1: 3a + 2o = 7",
+        "Equation 2: 5a + 3o = 11.5",
+        "Solve as system → intersection at (2, 0.5)"
+      ],
+      "resolved_parameters": {
+        "apple_cost": 2,
+        "orange_cost": 0.5,
+        "solution_type": "one_solution"
+      },
+      "final_solution": "$2.00 per apple",
+      "explanation": "The system solves to a = 2, o = 0.5. Each apple costs $2.00. This is a classic SAT word problem with two equations."
+    },
+    {
+      "question": "Which of the following is a solution to the system: y = 2x + 3 and y = -x + 6? (A) (1, 5) (B) (2, 7) (C) (1, 4) (D) (2, 5)",
+      "desmos_setup": [
+        "Graph both equations",
+        "Intersection at (1, 5)",
+        "Check: (1, 5) satisfies both"
+      ],
+      "resolved_parameters": {
+        "solution": "(1, 5)",
+        "solution_type": "one_solution"
+      },
+      "final_solution": "Option A: (1, 5)",
+      "explanation": "Graphing both lines shows they intersect at (1, 5). Testing the options: (1, 5) satisfies both equations: 5 = 2(1) + 3 and 5 = -1 + 6. This is a common SAT multiple-choice format."
+    }
+  ]
+}
