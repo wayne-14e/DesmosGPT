@@ -241,4 +241,4 @@ This project is open source and available under the MIT License.
 
 ---
 
-Built with ❤️ for SAT students everywhere
+Built with ❤️ for SAT students everywhere by SAT student
