@@ -132,7 +132,7 @@ To add a new SAT technique:
 ### Prerequisites
 - Node.js (v18 or higher)
 - npm or yarn
-- Google AI Studio API key
+- Gemini API key
 
 ### Installation
 
@@ -238,20 +238,6 @@ DesmosGPT/
 ## 📄 License
 
 This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Contributions are welcome! Areas where help is especially appreciated:
-
-- Adding new SAT techniques to the knowledge base
-- Improving OCR accuracy for specific problem types
-- Enhancing the math editor
-- Adding new visualization features
-- Bug fixes and performance improvements
-
-## 📧 Support
-
-For questions, issues, or suggestions, please open an issue on GitHub.
 
 ---
 
