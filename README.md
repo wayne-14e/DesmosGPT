@@ -1,4 +1,4 @@
-# DesmosGPT
+# DesmosGPT 📈
 
 An AI-powered SAT Math coaching application that transforms how students learn and solve math problems. Paste any SAT math question, and get interactive, step-by-step visual tutorials powered by the Desmos graphing calculator.
 
